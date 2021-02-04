@@ -26,6 +26,7 @@ handlers =
       try
         {status} = await session
           hooks:
+            # TODO: fix it, this call the hook 'nikita:session:resolved' of the root session
             on_result: ({action}) -> delete action.parent
           metadata:
             condition: true
@@ -45,6 +46,7 @@ handlers =
       try
         {status} = await session
           hooks:
+            # TODO: fix it, this call the hook 'nikita:session:resolved' of the root session
             on_result: ({action}) -> delete action.parent
           metadata:
             condition: true

@@ -278,7 +278,34 @@ describe 'actions.log.cli', ->
         "#{host}   h1   ✔\n"
         "#{host}      ♥\n"
       ]
-              
+
+    they.only 'when resolved with conditions', ({ssh}) ->
+      data = []
+      host = ssh?.host or 'localhost'
+      await nikita
+        ssh: ssh
+        metadata: tmpdir: true
+      , ({metadata: {tmpdir}}) ->
+        @log.cli
+          colors: false
+          stream: new MyWritable data
+          time: false
+        @call metadata: header: 'h1', ->
+          @call
+            metadata: header: 'h2'
+            if_execute: 'exit 0'
+            if_exists: tmpdir
+            if: -> true
+            unless_execute: 'exit 1'
+            unless_exists: "#{tmpdir}/ohno"
+            unless: -> false
+          , -> true
+      data.should.eql [
+        "#{host}   h1 : h2   ✔\n"
+        "#{host}   h1   ✔\n"
+        "#{host}      ♥\n"
+      ]
+
     they 'when rejected', ({ssh}) ->
       data = []
       host = ssh?.host or 'localhost'
