@@ -1,7 +1,7 @@
 
 # `nikita.fs.base.rename`
 
-Change the name or location of a file.
+Change the name or the location of a file.
 
 ## Schema definitions
 

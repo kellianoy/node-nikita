@@ -1,12 +1,12 @@
 
 # `nikita.system.user.remove`
 
-Create or modify a Unix user.
+Remove a Unix user.
 
 ## Callback parameters
 
 * `$status`   
-  Value is "true" if user was created or modified.
+  Value is "true" if user was removed.
 
 ## Example
 

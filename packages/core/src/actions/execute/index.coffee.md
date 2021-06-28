@@ -5,11 +5,11 @@ Run a command locally or with ssh if `host` or `ssh` is provided.
 
 ## Exit codes
 
-The properties "code" and "code_skipped" are important to determine whether an
+The properties `code` and `code_skipped` are important to determine whether an
 action failed or succeed with or without modifications. An action is expected to
 execute successfully with modifications if the exit code match one of the value
-in "code", by default "0". Otherwise, it is considered to have failed and an
-error is passed to the user callback. The "code_skipped" option is used to
+in `code`, by default `0`. Otherwise, it is considered to have failed and an
+error is thrown. The `code_skipped` property is used to
 define one or more exit codes that are considered successfull but without
 creating any modifications.
 
@@ -46,7 +46,7 @@ This example create a user on a remote server with the `useradd` command. It
 print the error message if the command failed or an information message if it
 succeed.
 
-An exit code equal to "9" defined by the "code_skipped" option indicates that
+An exit code equal to `9` defined by the `code_skipped` property indicates that
 the command is considered successfull but without any impact.
 
 ```js
@@ -102,7 +102,8 @@ console.info(stdout)
             type: ['boolean', 'string']
             description: '''
             Run this command inside a root directory with the arc-chroot command
-            or any provided string, require the "arch_chroot_rootdir" option if activated.
+            or any provided string, require the `arch_chroot_rootdir` property
+            if activated.
             '''
           'bash':
             type: ['boolean', 'string']
@@ -117,9 +118,9 @@ console.info(stdout)
             ]
             description: '''
             String, Object or array; Command to execute. A value provided as a
-            function is interpreted as an action and will be called by forwarding
-            the config object. The result is the expected to be the command
-            to execute.
+            function is interpreted as an action and will be called by
+            forwarding the config object. The result is the expected to be the
+            command to execute.
             '''
           'cwd':
             type: 'string'
@@ -131,8 +132,8 @@ console.info(stdout)
             items: type: 'integer'
             default: [0]
             description: '''
-            Expected code(s) returned by the command, int or array of int, default
-            to 0.
+            Expected code(s) returned by the command, int or array of int,
+            default to 0.
             '''
           'code_skipped':
             type: 'array'
@@ -157,10 +158,10 @@ console.info(stdout)
             type: 'object'
             description: '''
             Environment variables as key-value pairs. With local execution, it
-            default to `process.env`. With remote execution over SSH, the accepted
-            environment variables is determined by the AcceptEnv server setting
-            and default to "LANG,LC_*". See the `env_export` property to get
-            around this limitation.
+            default to `process.env`. With remote execution over SSH, the
+            accepted environment variables is determined by the AcceptEnv server
+            setting and default to `LANG,LC_*`. See the `env_export` property to
+            get around this limitation.
             '''
             patternProperties: '': type: "string"
           'env_export':
@@ -253,7 +254,8 @@ console.info(stdout)
             Temporary path storing the script, only apply with the `bash` and
             `arch_chroot` properties, always disposed once executed. Unless
             provided, the default location is `{metadata.tmpdir}/{string.hash
-            config.command}`. See the `tmpdir` plugin for additionnal information.
+            config.command}`. See the `tmpdir` plugin for additionnal
+            information.
             '''
           'trap':
             type: 'boolean'
@@ -278,8 +280,8 @@ console.info(stdout)
               'arch_chroot_rootdir':
                 type: 'string'
                 description: '''
-                Path to the mount point corresponding to the root directory, required
-                if the "arch_chroot" option is activated.
+                Path to the mount point corresponding to the root directory,
+                required if the "arch_chroot" property is activated.
                 '''
             required: ['arch_chroot_rootdir']
         required: ['command']

@@ -3,13 +3,13 @@
 
 // Prepare the system to receive password-less root login with SSL/TLS keys.
 
-// Prior executing this handler, a user with appropriate sudo permissions must be 
-// created. The script will use those credentials
-// to loggin and will try to become root with the "sudo" command. Use the "command" 
-// property if you must use a different command (such as "sudo su -").
+// Prior executing this handler, a user with appropriate sudo permissions must be
+// created. The script will use those credentials to loggin and will try to become
+// root with the `sudo` command. Use the `command` property if you must use a
+// different command (such as `sudo su -`).
 
-// Additionnally, it disables SELINUX which require a restart. The restart is 
-// handled by Masson and the installation procedure will continue as soon as an 
+// Additionnally, it disables SELINUX which require a restart. The restart is
+// handled by Masson and the installation procedure will continue as soon as an
 // SSH connection is again available.
 
 // ## Example

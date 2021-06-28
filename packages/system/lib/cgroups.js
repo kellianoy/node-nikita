@@ -12,8 +12,8 @@
   // have a well formatted file. It is available on CentOS with the `libcgroup-tools`
   // package.
 
-// If docker is installed and started, informations about live containers could be
-  // printed, that's why all path under  docker/* are ignored.
+// If docker is installed and started, information about live containers could be
+  // printed, that's why all paths under `docker/*` are ignored.
 
 // ## Example
 

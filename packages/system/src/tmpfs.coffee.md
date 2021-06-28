@@ -10,10 +10,10 @@ Mount a directory with tmpfs.d as a [tmpfs](https://www.freedesktop.org/software
 
 # Example
 
-All parameters can be omitted except type. nikita.tmpfs will ommit by replacing 
-the undefined value as '-', which does apply the os default behavior.
+All parameters can be omitted except `mount`. `nikita.tmpfs` will ommit by replacing 
+the undefined value as `-`, which does apply the OS default behavior.
 
-Setting uid/gid to '-', make the os creating the target owned by root:root. 
+Setting `uid`/`gid` to `-`, make the OS creating the target owned by `root:root`. 
 
 ## Schema definitions
 

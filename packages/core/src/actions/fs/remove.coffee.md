@@ -6,10 +6,8 @@ version of `unlink` based on the `rm` command.
 
 ## Output
 
-* `err`   
-  Error object if any.   
-* `status`   
-  Value is `true` if files were removed.   
+* `$status`   
+  Value is `true` if files were removed.
 
 ## Implementation details
 

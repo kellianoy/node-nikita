@@ -6,9 +6,7 @@
 
 // ## Output
 
-// * `err`   
-//   Error object if any.
-// * `status`   
+// * `$status`   
 //   Value is "true" if resource was moved.
 
 // ## Example

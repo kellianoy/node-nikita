@@ -7,10 +7,8 @@
 
 // ## Output
 
-// * `err`   
-//   Error object if any.   
-// * `status`   
-//   Value is "true" if directory was created or modified.   
+// * `$status`   
+//   Value is `true` if directory was created or modified.
 
 // ## Simple usage
 

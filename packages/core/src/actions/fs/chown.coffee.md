@@ -5,10 +5,8 @@ Change the ownership of a file or a directory.
 
 ## Output
 
-* `err`   
-  Error object if any.   
-* `status`   
-  Value is "true" if file ownership was created or modified.   
+* `$status`   
+  Value is `true` if file ownership was created or modified.
 
 ## Example
 

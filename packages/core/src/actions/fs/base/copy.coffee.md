@@ -1,7 +1,7 @@
 
 # `nikita.fs.base.copy`
 
-Change permissions of a file.
+Copy a file.
 
 ## Schema definitions
 

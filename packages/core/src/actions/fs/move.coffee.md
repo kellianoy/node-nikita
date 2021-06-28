@@ -6,9 +6,7 @@ exists, in which case the source file will no longer exists.
 
 ## Output
 
-* `err`   
-  Error object if any.
-* `status`   
+* `$status`   
   Value is "true" if resource was moved.
 
 ## Example

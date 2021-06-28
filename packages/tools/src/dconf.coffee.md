@@ -18,7 +18,7 @@ console.info(`Property was modified: ${$status}`)
 
 ## Note
 
-Run the command "dconf-editor" to navigate the database with a UI.
+Run the command `dconf-editor` to navigate the database with a UI.
 
 ## Schema definitions
 

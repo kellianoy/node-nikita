@@ -1,6 +1,8 @@
 
 # `nikita.fs.base.createWriteStream`
 
+Create a writable stream to write data into a file.
+
 ## Example
 
 ```js

@@ -3,7 +3,7 @@
 
 // Install Node.js packages with NPM.
 
-// It upgrades outdated packages if config "upgrade" is "true".
+// It upgrades outdated packages if config `upgrade` is `true`.
 
 // ## Example
 

@@ -1,14 +1,12 @@
 
 # `nikita.fs.chmod`
 
-Change the permissions of a file or directory.
+Change the permissions of a file or a directory.
 
 ## Output
-
-* `err`   
-  Error object if any.   
-* `status`   
-  Value is "true" if file permissions was created or modified.   
+ 
+* `$status`   
+  Value is `true` if file permissions was created or modified.
 
 ## Example
 

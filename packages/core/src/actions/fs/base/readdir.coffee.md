@@ -9,7 +9,7 @@ function.
 ## Output parameters
 
 * `files` ([fs.Dirent])   
-  List of the names of the files in the directory excluding '.' and '..'
+  List of the names of the files in the directory excluding '.' and '..'.
 
 ## Examples
 

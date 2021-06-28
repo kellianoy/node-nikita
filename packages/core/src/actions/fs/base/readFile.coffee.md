@@ -1,6 +1,10 @@
 
 # `nikita.fs.base.readFile`
 
+Read a file. This action mimic the behavior of the
+Node.js native [`fs.readFile`](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+function.
+
 ## Example
 
 ```js

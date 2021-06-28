@@ -6,8 +6,8 @@ Initialize an SSH connection.
 ## Examples
 
 Once an SSH connection is establish, it is possible to retrieve the connection
-by calling the `ssh` action. If no ssh connection is available, it will
-simply return null.
+by calling the `ssh` action. If no ssh connection is available, it will simply
+return `null`.
 
 ```js
 nikita
@@ -28,8 +28,8 @@ nikita
 .ssh.close()
 ```
 
-Set the `ssh` option to `null` or `false` to disabled SSH and force an action to be executed 
-locally:
+Set the `ssh` option to `null` or `false` to disabled SSH and force an action to
+be executed locally:
 
 ```js
 nikita
@@ -51,9 +51,9 @@ nikita
 .ssh.close()
 ```
 
-It is possible to group all the config properties inside the `ssh` property. This is
-provided for conveniency and is often used to pass `ssh` information when
-initializing the session.
+It is possible to group all the config properties inside the `ssh` property.
+This is provided for conveniency and is often used to pass `ssh` information
+when initializing the session.
 
 ```js
 require('nikita')({

@@ -3,9 +3,14 @@
 
 // Retrieve file information.
 
+// ## Output
+
+// * `stats`   
+//   Object with information about a file.
+
 // ## File information
 
-// The `mode` parameter indicates the file type. For conveniency, the
+// The `mode` property indicates the file type. For conveniency, the
 // `@nikitajs/core/lib/utils/stats` module provide functions to check each
 // possible file types.
 
@@ -14,7 +19,7 @@
 // Check if target is a file:
 
 // ```js
-// utils = require('@nikitajs/core/lib/utils')
+// const utils = require('@nikitajs/core/lib/utils')
 // const {stats} = await nikita
 // .file.touch("/tmp/a_file")
 // .fs.base.stat("/tmp/a_file")
@@ -24,7 +29,7 @@
 // Check if target is a directory:
 
 // ```js
-// utils = require('@nikitajs/core/lib/utils')
+// const utils = require('@nikitajs/core/lib/utils')
 // const {stats} = await nikita
 // .fs.base.mkdir("/tmp/a_file")
 // .fs.base.stat("/tmp/a_file")
@@ -33,8 +38,8 @@
 
 // ## Note
 
-// The `stat` command return an empty stdout in some circounstances like uploading
-// a large file with `file.download`, thus the activation of `retry` and `sleep`
+// The `nikita.fs.base.stat` command return an empty stdout in some circounstances like uploading
+// a large file with `nikita.file.download`, thus the activation of `retry` and `sleep`
 // confguration properties.
 
 // ## Schema definitions

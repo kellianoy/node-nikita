@@ -1,8 +1,8 @@
 
 # `nikita.system.mod`
 
-Load a kernel module. By default, unless the `persist` config is "false",
-module are loaded on reboot by writing the file "/etc/modules-load.d/{name}.conf".
+Load a kernel module. By default, unless the `persist` property is `false`,
+module are loaded on reboot by writing the file "/etc/modules-load.d/{module}.conf".
 
 ## Examples
 

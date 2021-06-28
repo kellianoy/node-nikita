@@ -2,7 +2,9 @@
 # `nikita.wait`
 
 Wait for some time before executing the following action. Internally, this is a
-simple action that calls setTimeout. Thus, time is in millisecond.
+simple action that calls
+[`setTimeout()`](https://nodejs.org/api/timers.html#timers_settimeout_callback_delay_args).
+Thus, time is in millisecond.
 
 ## Example
 

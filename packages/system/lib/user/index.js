@@ -3,8 +3,8 @@
 
 // Create or modify a Unix user.
 
-// If the user home is provided, its parent directory will be created with root 
-// ownerships and 0644 permissions unless it already exists.
+// If the user home is provided, its parent directory will be created with `root` 
+// ownerships and `0644` permissions unless it already exists.
 
 // ## Callback parameters
 
