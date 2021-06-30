@@ -135,10 +135,7 @@ const Content = ({
           && page.tableOfContents.items[0].items 
           && (
           <div css={styles.nav}>
-            <Toc
-              startLevel={1}
-              items={page.tableOfContents.items}
-            />
+            <Toc maxLevel={2} items={page.tableOfContents.items[0].items}/>
           </div>
         )}
         <div css={[styles.content, page.home ? null : styles.docsPage]}>
