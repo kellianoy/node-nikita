@@ -19,9 +19,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: apt install -y openssh-server && systemctl start ssh
     - run: ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
     - run: cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
-    - run: echo whoami && ssh `whoami`@localhost hostname
+    - run: echo $(whoami) && ssh `whoami`@localhost hostname
     - run: yarn --frozen-lockfile
     - run: yarn run test:local
   # deploy:
