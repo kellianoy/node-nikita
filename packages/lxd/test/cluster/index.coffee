@@ -141,3 +141,28 @@ describe 'lxc.cluster', ->
         await @test enabled: false
       finally
         await @clean()
+
+  they.only 'init properties with vm', ({ssh}) ->
+    @timeout -1
+    nikita
+      $ssh: ssh
+    , ({registry}) ->
+      await registry.register 'clean', ->
+        console.log 'clean'
+        # await @lxc.delete
+        #   container: 'nikita-cluster-3'
+        #   force: true
+      await registry.register 'test', ->
+        await @lxc.cluster
+          $debug: true
+          containers:
+            'nikita-cluster-3':
+              image: "images:#{images.alpine}"
+              # container: 'nikita-cluster-3'
+              vm: true
+      await @test()
+      # try
+      #   await @clean()
+      #   await @test()
+      # finally
+      #   await @clean()

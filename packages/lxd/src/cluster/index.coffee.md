@@ -52,6 +52,16 @@ containers:
     provision_container: path/to/action
 ```
 
+## Hooks
+
+    on_action = 
+      before: [
+        '@nikitajs/core/src/plugins/metadata/schema'
+      ]
+      handler: ({config}) ->
+        for name, container of config.containers
+          container.container = name
+
 ## Schema definitions
 
     definitions =
@@ -65,6 +75,7 @@ containers:
             config.
             '''
             patternProperties: '(^[a-zA-Z][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9](?!\-)$)|(^[a-zA-Z]$)':
+              $ref: 'module://@nikitajs/lxd/src/init#/definitions/config'
               type: 'object'
               properties:
                 'properties':
@@ -74,8 +85,8 @@ containers:
                   default: {}
                   patternProperties: '.*': # Device name of disk
                     $ref: 'module://@nikitajs/lxd/src/config/device#/definitions/disk/properties/properties'
-                'image':
-                  $ref: 'module://@nikitajs/lxd/src/init#/definitions/config/properties/image'
+                # 'image':
+                #   $ref: 'module://@nikitajs/lxd/src/init#/definitions/config/properties/image'
                 'nic':
                   type: 'object'
                   default: {}
@@ -126,7 +137,7 @@ containers:
                       description: '''
                       Enable SSH connection.
                       '''
-              required: ['image']
+              # required: ['image']
           'networks':
             type: 'object'
             default: {}
@@ -159,8 +170,7 @@ containers:
         # Set configuration
         await @lxc.init
           $header: 'Init'
-          container: containerName
-          image: containerConfig.image
+          containerConfig
         # Set config
         if containerConfig?.properties
           await @lxc.config.set
@@ -319,6 +329,8 @@ containers:
 
     module.exports =
       handler: handler
+      hooks:
+        on_action: on_action
       metadata:
         definitions: definitions
 
